@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "A complete backend project with chai aur code (Production ready code)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "project",
+    "backend",
+    "express"
+  ],
+  "author": "Ashutosh kesarwani",
+  "license": "ISC"
+}
