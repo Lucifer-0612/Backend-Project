@@ -1,18 +1,14 @@
-const multer = require('multer');
-const path = require('path');
+import multer from "multer";
+import path from "path";
 
-// Configure disk storage
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null,"./public/temp")); // Change path as needed
-    },
-    filename: function (req, file, cb) {
-        
-        cb(null, uniqueSuffix + '-' + file.originalname);
-    }
+  destination: function (req, file, cb) {
+    cb(null, "./public/temp");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + "-" + file.originalname);
+  },
 });
 
-// Create multer middleware
-const upload = multer({ storage });
-
-module.exports = upload;
+export const upload = multer({ storage });
